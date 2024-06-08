@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class ConditionsStatement {
     // Function to find out to eligibile to vote or not.
     public static void voteOrNot(int age) {
@@ -29,7 +27,7 @@ public class ConditionsStatement {
                 break;
 
             case 5:
-                System.out.println("The Subtraction of " + a + " and " + b + " is:" + (a * b));
+                System.out.println("The Remainder of " + a + " and " + b + " is:" + (a % b));
                 break;
 
             default:
@@ -38,12 +36,31 @@ public class ConditionsStatement {
         }
     }
 
+    // Function to find prime number or not
+    public static void primeNumberOrNot(int n) {
+        boolean isprime = true;
+        for (int i = 2; i < (n / 2); i++) {// "i" runs from the 2 becoz 1 is divisible by all :)
+            if (n % i == 0) {
+                isprime = false;
+                break;
+            }
+        }
+        if (isprime) {
+            if (n == 1)
+                System.out.println("one is neither composite nor prime number");
+            else
+                System.out.println(n + " is a Prime number");
+        } else
+            System.out.println(n + " is not a Prime number");
+    }
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         // vote or not
-        System.out.print("Enter age: ");
-        int a = sc.nextInt();
-        voteOrNot(a);
+        voteOrNot(20);
+        // calcualtor
+        // 1: addition, 2:subtraction, 3:multiplication, 4:division,5:Remainder
         caluclator(1, 20, 30);
+        // prime or not
+        primeNumberOrNot(7);
     }
 }
