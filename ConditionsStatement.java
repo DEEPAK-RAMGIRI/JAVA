@@ -29,6 +29,9 @@ public class ConditionsStatement {
             case 5:
                 System.out.println("The Remainder of " + a + " and " + b + " is:" + (a % b));
                 break;
+            case 6:
+                System.out.println("The power of " + a + " and " + b + " is:" + Math.pow(a, b));
+                break;
 
             default:
                 System.out.println("Invalid Number.");
@@ -59,7 +62,7 @@ public class ConditionsStatement {
         voteOrNot(20);
         // calcualtor
         // 1: addition, 2:subtraction, 3:multiplication, 4:division,5:Remainder
-        caluclator(1, 20, 30);
+        caluclator(6, 2, 3);
         // prime or not
         primeNumberOrNot(7);
     }
