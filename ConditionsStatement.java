@@ -62,7 +62,7 @@ public class ConditionsStatement {
         voteOrNot(20);
         // calcualtor
         // 1: addition, 2:subtraction, 3:multiplication, 4:division,5:Remainder
-        caluclator(6, 2, 3);
+        caluclator(2, 2, 3);
         // prime or not
         primeNumberOrNot(7);
     }
