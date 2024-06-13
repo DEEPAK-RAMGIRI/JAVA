@@ -82,6 +82,9 @@ public class SortingAlgorithms {
         conquer(a, si, ei, mid);
     }
 
+    // Quick Sorting algoritms
+    // worst case O(n^2)
+    // Time complexcity avg O(nlogn)
     public static int parition(int a[], int low, int high) {
         int pivot = a[high];
         int i = low - 1;
