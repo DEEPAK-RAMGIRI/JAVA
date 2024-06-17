@@ -300,6 +300,36 @@ public class Patterns {
         }
     }
 
+    public static int Pattern20(int row, int col, int m, int n) {
+        /*
+         * Function about pattern where ex we have 3X3 rooms we need to find a way from
+         * start to finish.
+         * start
+         * 1 2 3 : we need to start from 1 and finish at 9 like way 1: 12369,way 2:
+         * 14569 way 3:14789
+         * 4 5 6 : we have way 05:12589 way 06:12389 so for these problem we have 6
+         * total ways
+         * 7 8 9 finish
+         * By using recursion method.
+         */
+        if (row == m || col == n)// if rows or col == given size then we no need to code
+            return 0;
+        else if (row == m - 1) {
+            return 1;
+        } else if (col == n - 1) {
+            return 1;
+        }
+        int downpath = Pattern20(row + 1, col, m, n);
+        int rightpath = Pattern20(row, col + 1, m, n);
+        return downpath + rightpath;
+
+    }
+
+    public static int pattern21(int m, int n) {
+        /* This function represents that there */
+        return 0;
+    }
+
     public static void main(String[] args) {
         System.out.println("Pattern 01");
         Pattern01(4, 5);
@@ -358,5 +388,6 @@ public class Patterns {
         System.out.println("Pattern 19");
         Pattern19(5);
         System.out.println();
+        System.out.println("\n" + "Number of ways we have: " + Pattern20(0, 0, 2, 3) + " ways");
     }
 }

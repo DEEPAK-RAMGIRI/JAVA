@@ -5,12 +5,14 @@ public class RecursionProblems {
     public static int last = -1;
 
     public static int factorial(int n) {
+        // Function about Factorisal 5*4*3*2*1 =120
         if (n == 0)
             return 1;
         return n * factorial(n - 1);
     }
 
     public static void fibanacci(int a, int b, int n) {
+        // Function about Fibanacci 0 1 1 2 3 5 8
         if (n == 0)
             return;
         int c = a + b;
@@ -19,6 +21,7 @@ public class RecursionProblems {
     }
 
     public static int toThePower(int x, int n) {// Stack height = logn;
+        // X^n =2^2 =4 //by recursion function
         if (n == 0)
             return 1;
         if (x == 0)
@@ -43,6 +46,7 @@ public class RecursionProblems {
     }
 
     public static void reverseString(String name, int size) {
+        // Reverse of string using recursion
         if (size < 0)
             return;
         System.out.print(name.charAt(size));
@@ -51,6 +55,8 @@ public class RecursionProblems {
     }
 
     public static void firstAndLastOcuurences(String str, int n, char element) {
+        // function in which it will give first and last occurence of alphabhets in the
+        // given string
         if (n == str.length()) {
             System.out.println("\nFirst Occurenece: " + first);
             System.out.println("Last Occurence: " + last);
@@ -67,6 +73,7 @@ public class RecursionProblems {
     }
 
     public static boolean strictlySorted(int a[], int n) {
+        // Function to tell that the array is strictly sorted or not
         // strictly sorted means = (correct) 1 2 3 4 5 6 ,(wrong) 1 2 3 4 4
         // Time Complexcity = O(n)
         if (n == a.length)
@@ -77,6 +84,7 @@ public class RecursionProblems {
     }
 
     public static void endOfString(String str, String originalString, int index, int count) {
+        // in this function it will add x at the last and alphabets at first
         // Time Complexcity = O(n)
         if (index == str.length()) {
             for (int i = 0; i < count; i++)
@@ -92,7 +100,8 @@ public class RecursionProblems {
 
     }
 
-    public static boolean[] map = new boolean[26];// boolean intitally intailzed with the false
+    public static boolean[] map = new boolean[26];// boolean intitally intailzed with the false to store aplhabetics
+                                                  // order
 
     public static void deleteDuplicates(String Str, String NewString, int Index) {
         // Time complexcity is O(n)
@@ -138,6 +147,8 @@ public class RecursionProblems {
     public static String[] keyboard = { ".", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz" };
 
     public static void printCombinations(String str, int index, String combination) {
+        // Time complexcity for O(4^n)
+        // For these number of string is 4 (pqrs) that why time complexcity is O(4^n)
         if (str.length() == index) {
             System.out.println(combination);
             return;
