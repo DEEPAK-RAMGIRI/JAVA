@@ -48,6 +48,18 @@ public class BitManipulation {
         System.out.println("the Unique number in the given array is:" + result);
     }
 
+    // Cahnageing the number or fliping the number to get goal state
+    public static int minBitFlips(int start, int goal) {
+        int ans = 0;
+        int xor = start ^ goal;
+
+        while (xor != 0) {
+            ans += xor & 1;
+            xor >>= 1;
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         int n = bitwiseComplement(5);
         System.out.println(n);
@@ -59,5 +71,6 @@ public class BitManipulation {
         // for 1 to 0 clear operationonly.
         int a[] = { 1, 1, 2, 2, 4, 5, 5 };
         findUniqueNoinarray(a);
+        System.out.println(minBitFlips(10, 7)); // 3 flips need to change the 10 to 7
     }
 }
