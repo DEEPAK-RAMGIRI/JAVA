@@ -39,6 +39,15 @@ public class BitManipulation {
         System.out.println(~(bitmask) & n);
     }
 
+    // Finding only single Element in the array
+
+    public static void findUniqueNoinarray(int a[]) {
+        int result = 0;
+        for (int i : a)
+            result = result ^ i;
+        System.out.println("the Unique number in the given array is:" + result);
+    }
+
     public static void main(String[] args) {
         int n = bitwiseComplement(5);
         System.out.println(n);
@@ -48,5 +57,7 @@ public class BitManipulation {
         // update bit also a bit manuplation which have two ways 1 to0 and 0 to 1
         // for 0 to 1 setbit operation method only
         // for 1 to 0 clear operationonly.
+        int a[] = { 1, 1, 2, 2, 4, 5, 5 };
+        findUniqueNoinarray(a);
     }
 }
