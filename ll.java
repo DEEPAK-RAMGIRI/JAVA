@@ -1,4 +1,5 @@
 public class ll {
+
     public static node head;
     private static int size = 0;
 
@@ -81,27 +82,27 @@ public class ll {
         }
     }
 
-    // public static void addmiddle(String data, int index) {
-    // if (head == null)
-    // addLast(data);
-    // else if (index == 0 || index > size) {
-    // System.out.println("Invalid Index");
-    // return;
-    // } else {
-    // node temp = new node(data);
-    // node curr = head;
-    // for (int i = 1; i <= size; i++) {
-    // if (i == index) {
-    // node nextnode = curr;
-    // // temp = curr;
-    // curr = temp;
-    // temp.nxt = nextnode;
-    // break;
-    // }
-    // curr = curr.nxt;
-    // }
-    // }
-    // }
+    public static void addmiddle(String data, int index) {
+        if (head == null)
+            addLast(data);
+        else if (index == 0 || index > size) {
+            System.out.println("Invalid Index");
+            return;
+        } else {
+            node temp = new node(data);
+            node curr = head;
+            for (int i = 1; i <= size; i++) {
+                if (i == index) {
+                    node nextnode = curr;
+                    // temp = curr;
+                    curr = temp;
+                    temp.nxt = nextnode;
+                    break;
+                }
+                curr = curr.nxt;
+            }
+        }
+    }
 
     public static void main(String[] args) {
         // addfirst("linked");

@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 import java.util.Scanner;
 import java.text.NumberFormat;
@@ -9,6 +8,7 @@ public class currencyconverter {
         Locale india = new Locale("EN", "IN");
         Scanner sc = new Scanner(System.in);// 12324.134
         double currency = sc.nextDouble();
+        sc.close();
 
         // Formatting the currency for different locales
         NumberFormat usFormat = NumberFormat.getCurrencyInstance(Locale.US);
