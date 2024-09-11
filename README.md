@@ -1,6 +1,6 @@
 # JAVA
 Java Programming Language
-1. BIT MANIPULATIONS: [GET BIT & SET BIT & CLEAR BIT & UPDATE BIT.](https://github.com/DEEPAK-RAMGIRI/JAVA/blob/main/BitManipulation.java)
+1. BIT MANIPULATIONS: [GET BIT & SET BIT & CLEAR BIT & UPDATE BIT & OTHER.](https://github.com/DEEPAK-RAMGIRI/JAVA/blob/main/BitManipulation.java)
 2. CURRENCY CONVERTER: [CURRENCY CONVERTER.](https://github.com/DEEPAK-RAMGIRI/JAVA/blob/main/currencyconverter.java)
 3. FUNCIONS & 2D MATRIX: [SEARCH KEY IN MATRIX| PRINT SPIRAL MATRIX.](https://github.com/DEEPAK-RAMGIRI/JAVA/blob/main/MatricesProblems.java)
 4. PATTERNS FOR EXAMS: [SOLID | HOLLOW RHOMBUS | BUTTERFLY & NUMBER | STAR STAIRS.](https://github.com/DEEPAK-RAMGIRI/JAVA/blob/main/Patterns.java)
