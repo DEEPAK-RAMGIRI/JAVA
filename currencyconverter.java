@@ -21,5 +21,6 @@ public class currencyconverter {
         System.out.println("India: " + indiaFormat.format(currency));
         System.out.println("China: " + chinaFormat.format(currency));
         System.out.println("France: " + franceFormat.format(currency));
+        
     }
 }
