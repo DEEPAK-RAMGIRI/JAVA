@@ -4,6 +4,36 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+class LengthException extends Exception {
+    LengthException(String password) {
+        super(password);
+    }
+}
+
+class SmallException extends Exception {
+    SmallException(String password) {
+        super(password);
+    }
+}
+
+class CapitalException extends Exception {
+    CapitalException(String password) {
+        super(password);
+    }
+}
+
+class SpecialException extends Exception {
+    SpecialException(String password) {
+        super(password);
+    }
+}
+
+class DigitException extends Exception {
+    DigitException(String password) {
+        super(password);
+    }
+}
+
 public class tryandexception {
 
     public static void ArithmeticException() {
@@ -89,12 +119,57 @@ public class tryandexception {
         }
     }
 
+    public static void StrongPassword() {
+
+        Scanner scan = new Scanner(System.in);
+        String password = scan.nextLine();
+
+        boolean digit = false, capital = false, small = false, special = false;
+
+        try {
+            if (password.length() < 12)
+                throw new LengthException("Your password is Weak must contains Minimum 12 digits");
+
+            for (int i = 0; i < password.length(); i++) {
+                if (password.charAt(i) == '@' || password.charAt(i) == '$')
+                    special = true;
+                if (password.charAt(i) >= 'A' && password.charAt(i) <= 'Z')
+                    capital = true;
+                if (password.charAt(i) >= 'a' && password.charAt(i) <= 'z')
+                    small = true;
+                if (password.charAt(i) >= '0' && password.charAt(i) <= '9')
+                    digit = true;
+            }
+            if (special == false)
+                throw new SpecialException(" Your password must contains SpecialCharacters");
+            if (digit == false)
+                throw new DigitException("Your password must contains atleast one digit");
+            if (small == false)
+                throw new SmallException("Your password must contains atleast one smaller alpahabet");
+            if (capital == false)
+                throw new CapitalException("Your password must contains atleast one upper case letter");
+
+            System.out.println("password set succesfull");
+        } catch (LengthException e) {
+            System.out.println(e.getMessage());
+        } catch (SpecialException e) {
+            System.out.println(e.getMessage());
+        } catch (DigitException e) {
+            System.out.println(e.getMessage());
+        } catch (SmallException e) {
+            System.out.println(e.getMessage());
+        } catch (CapitalException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     public static void main(String[] args) {
 
         // ArithmeticException();
         // fileReadingException();
         // InputMismatchException();
-        calculate();
+        // calculate();
+        StrongPassword();
 
     }
 }
