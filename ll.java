@@ -1,5 +1,4 @@
 public class ll {
-
     public static node head;
     private static int size = 0;
 
@@ -15,110 +14,113 @@ public class ll {
 
     public static void addfirst(String data) {
         node temp = new node(data);
-        if (head == null) {
-            head = temp;
-            size++;
-        } else {
-            temp.nxt = head;
-            head = temp;
-            size++;
-        }
+        temp.nxt = head;
+        head = temp;
+        size++;
     }
 
     public static void addLast(String data) {
         node temp = new node(data);
         if (head == null) {
             head = temp;
-            size++;
         } else {
             node current = head;
-            while (current.nxt != null)
+            while (current.nxt != null) {
                 current = current.nxt;
+            }
             current.nxt = temp;
-            size++;
         }
+        size++;
     }
 
     public static void traversal() {
         node temp = head;
         System.out.println("Total size of the linked list is: " + size);
-        System.out.print("head -->");
+        System.out.print("head --> ");
         while (temp != null) {
-            System.out.print(temp.data + "-->");
+            System.out.print(temp.data + " --> ");
             temp = temp.nxt;
         }
-        if (temp == null)
-            System.out.print("null");
+        System.out.println("null");
     }
 
     public static void delfirst() {
         if (head == null) {
-            System.out.println("Size of Linked List =" + size);
-        } else if (head.nxt == null) {
-            size--;
-            System.out.println("deleted " + head.data + " element successfully and size of linked list is: " + size);
-            head = null;
-        } else {
-            size--;
-            System.out.println("deleted " + head.data + " element successfully and size of linked list is: " + size);
-            head = head.nxt;
+            System.out.println("Linked List is empty.");
+            return;
         }
+        System.out.println("Deleted " + head.data + " element successfully.");
+        head = head.nxt;
+        size--;
     }
 
     public static void dellast() {
-        if (head == null)
-            System.out.println("Linked list is Empty");
-        else if (head.nxt == null) {
-            size--;
-            System.out.println("linked list size is: " + size + "and element " + head.data + "deleted successfully");
+        if (head == null) {
+            System.out.println("Linked list is empty.");
+            return;
+        }
+        if (head.nxt == null) {
+            System.out.println("Deleted " + head.data + " element successfully.");
             head = null;
         } else {
-            size--;
             node temp = head;
-            while (temp.nxt.nxt != null)
+            while (temp.nxt.nxt != null) {
                 temp = temp.nxt;
-            System.out.println("linked list size is: " + size + "and element " + temp.data + "deleted successfully");
+            }
+            System.out.println("Deleted " + temp.nxt.data + " element successfully.");
             temp.nxt = null;
         }
+        size--;
     }
 
     public static void addmiddle(String data, int index) {
-        if (head == null)
-            addLast(data);
-        else if (index == 0 || index > size) {
+        if (index < 0 || index > size) {
             System.out.println("Invalid Index");
             return;
-        } else {
-            node temp = new node(data);
-            node curr = head;
-            for (int i = 1; i <= size; i++) {
-                if (i == index) {
-                    node nextnode = curr;
-                    // temp = curr;
-                    curr = temp;
-                    temp.nxt = nextnode;
-                    break;
-                }
-                curr = curr.nxt;
-            }
         }
+        if (index == 0) {
+            addfirst(data);
+            return;
+        }
+        node temp = new node(data);
+        node curr = head;
+        for (int i = 0; i < index - 1; i++) {
+            curr = curr.nxt;
+        }
+        temp.nxt = curr.nxt;
+        curr.nxt = temp;
+        size++;
+    }
+
+    public static node delmiddle(node head) {
+        if (head == null || head.nxt == null) {
+            return null; // Empty list or only one node
+        }
+        node fast = head, slow = head, prev = null;
+
+        while (fast != null && fast.nxt != null) {
+            fast = fast.nxt.nxt;
+            prev = slow;
+            slow = slow.nxt;
+        }
+
+        if (prev != null) {
+            prev.nxt = slow.nxt; // Bypass the slow node
+        }
+        size--;
+        return head;
     }
 
     public static void main(String[] args) {
-        // addfirst("linked");
         addLast("list");
-        // addfirst("This is");
-        // delfirst();
+        addfirst("This is");
+        addLast("another");
+        addmiddle("middle", 1); // Add "middle" at index 1
+        traversal();
         // dellast();
-        // System.out.println(size);
-        // traversal();
-        addLast("list");
-        addLast("list");
-        addLast("list");
-        addLast("list");
-        addLast("list");
-        addLast("list");
-        addmiddle("hello", 0);
+        // delfirst();
+        traversal();
+        head = delmiddle(head); // Delete the middle node
         traversal();
     }
 }
