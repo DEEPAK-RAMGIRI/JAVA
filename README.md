@@ -7,3 +7,4 @@ Java Programming Language
 5. RECURSION PROBLEMS: [ABOUT RECURSIONS PROBLEMS.](https://github.com/DEEPAK-RAMGIRI/JAVA/blob/main/RecursionProblems.java)
 6. SORTING ALGORITHMS: [BUBBLE | INSERTION | SELECTION | MERGE | QUICKSORT ALGORITHMS.](https://github.com/DEEPAK-RAMGIRI/JAVA/blob/main/SortingAlgorithms.java)
 7. TRY & EXCEPTIONS: [ALL TYPES RUN TIME EXCEPTIONS](https://github.com/DEEPAK-RAMGIRI/JAVA/blob/main/tryandexception.java)
+8. COLLECTIONS: [CompareTo](https://github.com/DEEPAK-RAMGIRI/JAVA/blob/main/Employee.java)
